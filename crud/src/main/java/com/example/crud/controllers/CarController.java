@@ -10,13 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-// DONE - crea nuova Car
-// DONE - restituisce la lista di tutte le Car
-// DONE - restituisce una singola Car - se id non è presente in db (usa existsById()), restituisce Car vuota
-// DONE - aggiorna type della Car specifica, identificata da id e passando query param se id non è presente in db (usa existsById()), restituisce Car vuota
-//cancella la Car specifica - se non presente, la risposta deve avere Conflict HTTP status
-// DONE - cancella tutte le Cars in db
-
 @RestController
 @RequestMapping(path = "/cars")
 public class CarController {
@@ -55,7 +48,6 @@ public class CarController {
             return new Car();
         }
     }
-    //cancella la Car specifica - se non presente, la risposta deve avere Conflict HTTP status
 
     @DeleteMapping(path = "/deleteById/{id}")
     public ResponseEntity<?> deleteById(@PathVariable long id) {
